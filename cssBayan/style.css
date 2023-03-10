@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: aqua;
+  padding-top: 100px;
+}
+details {
+}
+summary::marker {
+  content: "";
+}
+.wrapper {
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+.accordion {
+  cursor: pointer;
+  width: 760px;
+}
+.accordion__item {
+  border-bottom: 1px solid grey;
+}
+.accordion__title {
+  width: 100%;
+  text-align: center;
+  font-size: 1.5rem;
+  outline: none;
+}
+.accordion__body {
+  width: 100%;
+  text-align: center;
+}
