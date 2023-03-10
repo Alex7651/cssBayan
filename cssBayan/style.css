@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: aqua;
+  padding-top: 30px;
+}
+@media (max-width: 821px) {
+  body {
+    padding-top: 20px;
+  }
+}
+@media (max-width: 321px) {
+  body {
+    padding-top: 10px;
+  }
+}
+.wrapper {
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+.accordion__item {
+  border-bottom: 1px solid grey;
+  pointer-events: none;
+}
+.accordion__title {
+  width: 100%;
+  text-align: center;
+  font-size: 1.5rem;
+  color: blue;
+}
+h1 {
+  font-size: 1.8rem;
+}
+@media (max-width: 821px) {
+  .accordion__title {
+    font-size: 1.2rem;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 321px) {
+  .accordion__title {
+    font-size: 0.8rem;
+  }
+  h1 {
+    font-size: 1.2rem;
+  }
+}
+.accordion__body {
+  width: 100%;
+  text-align: center;
+}
+summary {
+  list-style: none;
+}
+.accordion {
+  width: 70vw;
+}
+.labl {
+  display: block;
+  width: 100%;
+  cursor: pointer;
+}
+.labl > input {
+  visibility: hidden;
+  position: absolute;
+}
+.labl > input + details {
+  cursor: pointer;
+}
+.accordion__body {
+  display: none;
+}
+@media (hover: hover) {
+  label:hover .accordion__body {
+    display: block;
+    opacity: 1;
+    animation: name 1.3s ease;
+  }
+  @keyframes name {
+    0% {
+      display: none;
+      opacity: 0;
+    }
+
+    1% {
+      display: block;
+      opacity: 0;
+    }
+
+    100% {
+      display: block;
+      opacity: 1;
+    }
+  }
+}
+@media (hover: hover) {
+  .accordion:hover .accordion__title {
+    color: black;
+  }
+}
+@media (hover: hover) {
+  .accordion:hover summary {
+    list-style-image: url(https://avatars.mds.yandex.net/i?id=6219cf3dfa778b5b917ac24b2560b17db1b0e92c-7084676-images-thumbs&ref=rim&n=33&w=20&h=20);
+  }
+}
+input:checked + details .accordion__body {
+  display: block;
+}
+input:checked + details .accordion__title {
+  color: black;
+}
+@media (hover: hover) {
+  .accordion:hover input:checked + details summary {
+    list-style-image: url(https://smpauthors.files.wordpress.com/2018/04/arrow.jpg?w=20&h=20);
+  }
+}
+@media (hover: hover) {
+  label:hover .accordion__title {
+    list-style-image: url(https://smpauthors.files.wordpress.com/2018/04/arrow.jpg?w=20&h=20);
+    opacity: 1;
+    animation: name 1.3s ease;
+  }
+  @keyframes name {
+    0% {
+      display: none;
+      opacity: 0;
+    }
+
+    1% {
+      display: block;
+      opacity: 0;
+    }
+
+    100% {
+      display: block;
+      opacity: 1;
+    }
+  }
+}
