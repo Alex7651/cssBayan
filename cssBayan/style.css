@@ -8,18 +8,12 @@ body {
   background-color: aqua;
   padding-top: 100px;
 }
-details {
-}
-summary::marker {
-  content: "";
-}
 .wrapper {
   display: flex;
   justify-content: center;
   min-height: 100vh;
 }
 .accordion {
-  cursor: pointer;
   width: 760px;
 }
 .accordion__item {
@@ -29,9 +23,49 @@ summary::marker {
   width: 100%;
   text-align: center;
   font-size: 1.5rem;
-  outline: none;
+  color: blue;
 }
 .accordion__body {
   width: 100%;
   text-align: center;
+}
+summary {
+  list-style: none;
+}
+.labl {
+  display: block;
+  width: 760px;
+}
+.labl > input {
+  /* HIDE RADIO */
+  visibility: hidden;
+  position: absolute;
+}
+.labl > input + details {
+  /* DIV STYLES */
+  cursor: pointer;
+}
+.accordion__body {
+  display: none;
+}
+.accordion__item:hover .accordion__body {
+  display: block;
+}
+.accordion__item:hover .accordion__title {
+  color: black;
+}
+.accordion__item:hover summary {
+  list-style-image: url(https://smpauthors.files.wordpress.com/2018/04/arrow.jpg?w=20&h=20);
+}
+.labl summary {
+  list-style-image: url(https://avatars.mds.yandex.net/i?id=6219cf3dfa778b5b917ac24b2560b17db1b0e92c-7084676-images-thumbs&ref=rim&n=33&w=20&h=20);
+}
+input:checked + details .accordion__body {
+  display: block;
+}
+input:checked + details .accordion__title {
+  color: black;
+}
+input:checked + details summary {
+  list-style-image: url(https://smpauthors.files.wordpress.com/2018/04/arrow.jpg?w=20&h=20);
 }
